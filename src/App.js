@@ -5,29 +5,29 @@ import { v4 as uuidv4 } from 'uuid';
 function App() {
   const [todos, setTodos] = useState([])
   const todoInputRef = useRef()
-  const LOCAL_STORAGE_KEY ='todoApp.todos'
+  const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
   //  If todo is empty we are trying to getting back stored todos form local storage
   useEffect(() => {
-    const storedTodo =JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+    const storedTodo = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
 
-    if(storedTodo) setTodos(storedTodo)
-  },[])
+    if (storedTodo) setTodos(storedTodo)
+  }, [])
 
   // Storing the existing todo in local storage 
   useEffect(() => {
-      localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(todos))
-  },[todos])
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos))
+  }, [todos])
 
- 
+
 
   function handleAddTodo(e) {
     const task = todoInputRef.current.value
-    if(task === '') return
-    setTodos( prevTodos => {
-      return [...prevTodos, {id:uuidv4(), name: task, completed: false}]
+    if (task === '') return
+    setTodos(prevTodos => {
+      return [...prevTodos, { id: uuidv4(), name: task, completed: false }]
     })
-    todoInputRef.current.value=null
+    todoInputRef.current.value = null
   }
 
   function toggleTodo(id) {
@@ -38,12 +38,12 @@ function App() {
   }
 
   function handleClearAll() {
-    const newTodos=[]
+    const newTodos = []
     setTodos(newTodos)
   }
 
   function handleClearCompleted() {
-    const newTodos=todos.filter(todo => !todo.completed)
+    const newTodos = todos.filter(todo => !todo.completed)
     setTodos(newTodos)
   }
 
@@ -51,8 +51,8 @@ function App() {
     <>
       <TodoList todos={todos} toggleTodo={toggleTodo} />
       <input ref={todoInputRef} type="text" />
-      <button onClick= {handleAddTodo}>Add To do</button>
-      <button onClick= {handleClearCompleted}>Clear Completed</button>
+      <button onClick={handleAddTodo}>Add To do</button>
+      <button onClick={handleClearCompleted}>Clear Completed</button>
       <button onClick={handleClearAll}>Delete all</button>
       <div>
         {todos.filter(todo => !todo.completed).length} Pending Task
