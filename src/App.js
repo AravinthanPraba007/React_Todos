@@ -44,7 +44,7 @@ function App() {
       <button onClick= {handleAddTodo}>Add To do</button>
       <button>Delete all</button>
       <div>
-        0 Pending Task
+        {todos.filter(todo => !todo.completed).length} Pending Task
     </div>
     </>
 
