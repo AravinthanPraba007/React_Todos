@@ -37,12 +37,17 @@ function App() {
     setTodos(newTodos)
   }
 
+  function handleClearAll() {
+    const newTodos=[]
+    setTodos(newTodos)
+  }
+
   return (
     <>
       <TodoList todos={todos} toggleTodo={toggleTodo} />
       <input ref={todoInputRef} type="text" />
       <button onClick= {handleAddTodo}>Add To do</button>
-      <button>Delete all</button>
+      <button onClick={handleClearAll}>Delete all</button>
       <div>
         {todos.filter(todo => !todo.completed).length} Pending Task
     </div>
