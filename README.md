@@ -1,7 +1,18 @@
 
 
-Live Demo React_Todos Application [Click Here](https://aravinthanpraba007.github.io/React_Todos/).
+## React Todos Application
 
+Live Demo App [Click Here](https://aravinthanpraba007.github.io/React_Todos/).
+
+## What i learned in this project
+
+`Todo app (Version 1)`
+
+1. useState - To initailize the state variable 
+
+2. useEffect - To do a task after each render
+
+3. localStorage - To store the data in localStorage and retrive them later even after page reload
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
