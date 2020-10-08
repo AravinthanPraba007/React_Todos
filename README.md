@@ -4,7 +4,7 @@
 
 Live Demo App [Click Here](https://aravinthanpraba007.github.io/React_Todos/).
 
-## What i learned in this project
+## What concepts i learned in this project
 
 `Todo app (Version 1)`
 
