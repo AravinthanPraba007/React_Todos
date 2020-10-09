@@ -48,16 +48,20 @@ function App() {
   }
 
   return (
-    <>
+    <div className ="App-header">
+      <div class="Div-spacing">
       <TodoList todos={todos} toggleTodo={toggleTodo} />
-      <input ref={todoInputRef} type="text" />
-      <button onClick={handleAddTodo}>Add To do</button>
-      <button onClick={handleClearCompleted}>Clear Completed</button>
-      <button onClick={handleClearAll}>Delete all</button>
-      <div>
+      </div>
+      <input className="Input-box" ref={todoInputRef} type="text" placeholder=" Add a New Task here !!.." />
+      <div class="Div-spacing">
+      <button className= "Button" onClick={handleAddTodo}>Add To do</button>
+      <button className="Button" onClick={handleClearCompleted}>Clear Completed</button>
+      <button className="Button" onClick={handleClearAll}>Delete all</button>
+      </div>
+      <div class="Div-spacing">
         {todos.filter(todo => !todo.completed).length} Pending Task
     </div>
-    </>
+    </div>
 
   );
 }
